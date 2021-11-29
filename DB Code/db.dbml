@@ -1,0 +1,49 @@
+Project Order{
+database_type: 'MySQL'
+note: 'This is a university Project'
+}
+
+Table Users
+{
+  id int [pk]
+  name char(15)
+  surname char(20)
+  role char(20)
+}
+
+
+
+Table Items
+{
+  id int [pk]
+  name char(15)
+  category char(15) [ref:> Item_Categories.title]
+  supervisor int [ref:> Users.id]
+  room int [ref:> Rooms.id]
+}
+
+Table Item_Categories
+{
+  title char(15)
+}
+
+Table Rooms
+{
+  id int [pk]
+  name char(15)
+  floor int(3)
+  building int [ref:> Buildings.id]
+  categories char(15) [ref:> Room_Categories.name]
+}
+
+Table Room_Categories
+{
+  name char(15)
+}
+
+Table Buildings
+{
+  id int [pk]
+  name char(15)
+  Address char(100)
+}
