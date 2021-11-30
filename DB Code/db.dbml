@@ -15,11 +15,12 @@ Table Users
 
 Table Items
 {
-  id int [pk]
+  id bigint [pk]
   name char(15)
   category char(15) [ref:> Item_Categories.title]
   supervisor int [ref:> Users.id]
   room int [ref:> Rooms.id]
+  comments varchar
 }
 
 Table Item_Categories
