@@ -48,3 +48,13 @@ Table Buildings
   name char(15)
   Address char(100)
 }
+
+Table Rights
+{
+  item bigint [ref:> Items.id]
+  room int [ref:> Rooms.id]
+
+  indexes{
+    (item,room) [pk]
+  }
+}

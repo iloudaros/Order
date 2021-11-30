@@ -36,6 +36,12 @@ CREATE TABLE "Buildings" (
   "Address" char(100)
 );
 
+CREATE TABLE "Rights" (
+  "item" bigint,
+  "room" int,
+  PRIMARY KEY ("item", "room")
+);
+
 ALTER TABLE "Items" ADD FOREIGN KEY ("category") REFERENCES "Item_Categories" ("title");
 
 ALTER TABLE "Items" ADD FOREIGN KEY ("supervisor") REFERENCES "Users" ("id");
@@ -45,3 +51,7 @@ ALTER TABLE "Items" ADD FOREIGN KEY ("room") REFERENCES "Rooms" ("id");
 ALTER TABLE "Rooms" ADD FOREIGN KEY ("building") REFERENCES "Buildings" ("id");
 
 ALTER TABLE "Rooms" ADD FOREIGN KEY ("categories") REFERENCES "Room_Categories" ("name");
+
+ALTER TABLE "Rights" ADD FOREIGN KEY ("item") REFERENCES "Items" ("id");
+
+ALTER TABLE "Rights" ADD FOREIGN KEY ("room") REFERENCES "Rooms" ("id");
