@@ -1,6 +1,6 @@
 Project Order{
 database_type: 'MySQL'
-note: 'This is a university Project'
+note: 'This is a university Project. Order is a set of logistic tools that track objects of interest inside of a building'
 }
 
 Table Users
@@ -8,9 +8,27 @@ Table Users
   id int [pk]
   name char(15)
   surname char(20)
+  email varchar
   role char(20)
 }
 
+
+Table Log
+{
+  id bigint [pk]
+  user int [ref: > Users.id]
+  date date
+  table char(15)
+  type action
+
+}
+
+enum action
+{
+Insert
+Update
+Delete
+}
 
 
 Table Items
@@ -20,6 +38,7 @@ Table Items
   category char(15) [ref:> Item_Categories.title]
   supervisor int [ref:> Users.id]
   room int [ref:> Rooms.id]
+  exp_date date
   comments varchar
 }
 
@@ -57,4 +76,15 @@ Table Rights
   indexes{
     (item,room) [pk]
   }
+}
+
+
+Table Moves
+{
+id bigint [pk]
+origin_room int [ref: > Rooms.id]
+destination_room int [ref: > Rooms.id]
+building int [ref: > Buildings.id]
+timestamp datetime
+legal bit
 }
