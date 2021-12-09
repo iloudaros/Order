@@ -54,6 +54,7 @@ CREATE TABLE `Rights` (
 
 CREATE TABLE `Moves` (
   `id` bigint PRIMARY KEY,
+  `item` bigint,
   `origin_room` int,
   `destination_room` int,
   `building` int,
@@ -76,6 +77,8 @@ ALTER TABLE `Rooms` ADD FOREIGN KEY (`categories`) REFERENCES `Room_Categories` 
 ALTER TABLE `Rights` ADD FOREIGN KEY (`item`) REFERENCES `Items` (`id`);
 
 ALTER TABLE `Rights` ADD FOREIGN KEY (`room`) REFERENCES `Rooms` (`id`);
+
+ALTER TABLE `Moves` ADD FOREIGN KEY (`item`) REFERENCES `Items` (`id`);
 
 ALTER TABLE `Moves` ADD FOREIGN KEY (`origin_room`) REFERENCES `Rooms` (`id`);
 

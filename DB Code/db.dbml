@@ -82,6 +82,7 @@ Table Rights
 Table Moves
 {
 id bigint [pk]
+item bigint [ref:> Items.id]
 origin_room int [ref: > Rooms.id]
 destination_room int [ref: > Rooms.id]
 building int [ref: > Buildings.id]
