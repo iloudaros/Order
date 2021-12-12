@@ -9,11 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        LandmarkList()
-            
+        VStack{
+            Spacer()
+            Image("LogoLetters")
+            Spacer()
+            VStack{
+                TextField("Username", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                SecureField("Password", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("Apple")/*@END_MENU_TOKEN@*/)
+            }
+            Spacer()
         }
-            
+        
     }
+    
+}
 
 
 struct ContentView_Previews: PreviewProvider {
