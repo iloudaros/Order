@@ -8,17 +8,51 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State public var username: String = ""
+    @State public var pass: String = ""
+    @State public var valid: Bool = true
+
+
     var body: some View {
         VStack{
             Spacer()
             Image("LogoLetters")
             Spacer()
-            VStack{
-                TextField("Username", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
-                SecureField("Password", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("Apple")/*@END_MENU_TOKEN@*/)
+            VStack(alignment: .center){
+                
+                ZStack(alignment: .center) {
+                    Image("logrec")
+                    TextField("Username", text: $username ).multilineTextAlignment(.center)
+                }
+                ZStack {
+                    Image("logrec")
+                    SecureField("Password", text: $pass )
+                        .multilineTextAlignment(/*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
             }
+            .padding(.bottom)
+                        
+            Button{
+                if (username == "iloudaros" && pass == "password")
+                {
+                    
+                }
+                else
+                {
+                    valid = false
+                }
+            } label: {
+                Text("Connect")
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("order pink"))
+            }
+            .padding(.bottom)
+            
+            Text(valid ? "" : "Wrong Credentials!")
+                .foregroundColor(Color.red)
             Spacer()
-        }
+        }.background(Color("order blue"))
         
     }
     
