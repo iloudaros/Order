@@ -10,7 +10,7 @@ import CodeScanner
 
 struct Scanner: View {
     @State var isPresentingScanner = false
-    @State var scannedCode: String = "Scan a QR Code"
+    @State var scannedCode: String = ""
     
     var scannerSheet : some View {
         CodeScannerView(codeTypes: [.qr],
@@ -25,16 +25,27 @@ struct Scanner: View {
     
     
     var body: some View {
-        VStack{
-            Text(scannedCode)
-                .padding(.bottom, 5.0)
-            Button("Scan QR Code"){
-                self.isPresentingScanner = true
+        ZStack {
+            Image("background").offset(y:50)
+            VStack{
+                Spacer()
+                Spacer()
+                Spacer()
+                Text(scannedCode)
+                    .padding(.bottom, 5.0)
+               
+                Button{
+                    self.isPresentingScanner = true
+                } label: {
+                    Image("button")
+                } .sheet(isPresented: $isPresentingScanner){
+                    self.scannerSheet
+                }
+                
+                
+                Spacer()
             }
-            .sheet(isPresented: $isPresentingScanner){
-                self.scannerSheet
-            }
-        }
+        }.background(Color("order blue"))
     }
 }
 

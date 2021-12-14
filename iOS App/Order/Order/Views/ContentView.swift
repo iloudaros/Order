@@ -9,51 +9,52 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State public var username: String = ""
-    @State public var pass: String = ""
+    @StateObject private var loginVM = LoginViewModel()
     @State public var valid: Bool = true
-
-
+    
+    
     var body: some View {
-        VStack{
-            Spacer()
-            Image("LogoLetters")
-            Spacer()
-            VStack(alignment: .center){
-                
-                ZStack(alignment: .center) {
-                    Image("logrec")
-                    TextField("Username", text: $username ).multilineTextAlignment(.center)
-                }
-                ZStack {
-                    Image("logrec")
-                    SecureField("Password", text: $pass )
-                        .multilineTextAlignment(/*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                }
-            }
-            .padding(.bottom)
-                        
-            Button{
-                if (username == "iloudaros" && pass == "password")
-                {
+        NavigationView{
+            VStack{
+                Spacer()
+                Image("LogoLetters")
+                Spacer()
+                VStack(alignment: .center){
                     
+                    ZStack(alignment: .center) {
+                        Image("logrec")
+                        TextField("Username", text: $loginVM.credentials.email ).multilineTextAlignment(.center)
+                    }
+                    ZStack {
+                        Image("logrec")
+                        SecureField("Password", text: $loginVM.credentials.password )
+                            .multilineTextAlignment(/*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    }
                 }
-                else
-                {
-                    valid = false
+                .padding(.bottom)
+                
+                Button{
+                    if (username == "iloudaros" && pass == "password")
+                    {
+                        
+                    }
+                    else
+                    {
+                        valid = false
+                    }
+                } label: {
+                    Text("Connect")
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("order pink"))
                 }
-            } label: {
-                Text("Connect")
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("order pink"))
-            }
-            .padding(.bottom)
+                .padding(.bottom)
+                
+                Text(valid ? "" : "Wrong Credentials!")
+                    .foregroundColor(Color.red)
+                Spacer()
+            }.background(Color("order blue"))
             
-            Text(valid ? "" : "Wrong Credentials!")
-                .foregroundColor(Color.red)
-            Spacer()
-        }.background(Color("order blue"))
-        
+        }
     }
     
 }
