@@ -13,8 +13,7 @@
 		9497A821276419CC0027A717 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9497A820276419CC0027A717 /* Preview Assets.xcassets */; };
 		94C33A512768505100788580 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 94C33A502768505100788580 /* CodeScanner */; };
 		94C33A53276851F900788580 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C33A52276851F900788580 /* Scanner.swift */; };
-		94CCA73627694EEA00BE1281 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CCA73527694EEA00BE1281 /* LoginViewModel.swift */; };
-		94CCA7382769513E00BE1281 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CCA7372769513E00BE1281 /* Credentials.swift */; };
+		94CCA73C2769649B00BE1281 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CCA73B2769649B00BE1281 /* Authentication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +23,8 @@
 		9497A81D276419CC0027A717 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9497A820276419CC0027A717 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		94C33A52276851F900788580 /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
-		94CCA73527694EEA00BE1281 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		94CCA7372769513E00BE1281 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Credentials.swift; path = Views/Credentials.swift; sourceTree = "<group>"; };
+		94CCA73B2769649B00BE1281 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		94CCA73D27697AB700BE1281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +58,9 @@
 		9497A818276419C80027A717 /* Order */ = {
 			isa = PBXGroup;
 			children = (
-				94CCA7372769513E00BE1281 /* Credentials.swift */,
-				94CCA73527694EEA00BE1281 /* LoginViewModel.swift */,
+				94CCA73D27697AB700BE1281 /* Info.plist */,
 				9497A819276419C80027A717 /* OrderApp.swift */,
+				94CCA73B2769649B00BE1281 /* Authentication.swift */,
 				9497A8312765212E0027A717 /* Views */,
 				9497A81D276419CC0027A717 /* Assets.xcassets */,
 				9497A81F276419CC0027A717 /* Preview Content */,
@@ -162,11 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94CCA73627694EEA00BE1281 /* LoginViewModel.swift in Sources */,
 				9497A81C276419C80027A717 /* ContentView.swift in Sources */,
-				94CCA7382769513E00BE1281 /* Credentials.swift in Sources */,
 				94C33A53276851F900788580 /* Scanner.swift in Sources */,
 				9497A81A276419C80027A717 /* OrderApp.swift in Sources */,
+				94CCA73C2769649B00BE1281 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +298,8 @@
 				DEVELOPMENT_TEAM = 65UR6TNYCH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Order/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To scan QR Codes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -329,6 +329,8 @@
 				DEVELOPMENT_TEAM = 65UR6TNYCH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Order/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To scan QR Codes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

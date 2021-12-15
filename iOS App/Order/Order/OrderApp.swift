@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct OrderApp: App {
+    @StateObject var authentication = Authentication()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if authentication.isValidated {
+                Scanner().environmentObject(authentication)
+            }
+            else {
+                ContentView().environmentObject(authentication)
+            }
+            
         }
     }
 }
+
