@@ -9,3 +9,6 @@ Set of logistic tools that track objects of interest inside of a building
 δωματίων κ.ο.κ. και παρέχεται η δυνατότητα καθορισμού των επιτρεπόμενων χώρων κάθε αντικειμένου. 
 Αυτό επιτυγχάνεται μέσω διασύνδεσης του συστήματός με ηλεκτρονικές κλειδαριές στον χώρο. 
 Τα order tags, επιπλέον, παρέχουν εύκολη και γρήγορη πρόσβαση σε χρήσιμες πληροφορίες γύρω από το κάθε αντικείμενο, μέσω της συνεργαζόμενης mobile εφαρμογής. 
+
+# Order in the Museum
+![omuseum](Order%20in%20the%20Museum/Graphics/Mockups/Devices/Triplet_compressed.png)
