@@ -1,4 +1,4 @@
-![logo](Documentation/Logo/Logo\ Letters.png)
+![logo](Documentation/Logo/Logo%20Letters.png)
 Set of logistic tools that track objects of interest inside of a building
 
 
